@@ -1,0 +1,7 @@
+.item {
+    border: 1px solid black;
+    background-repeat: 15px;
+    width: 25%;
+    margin: 15px auto;
+    box-shadow: 5px 5px 5px seagreen;
+}
