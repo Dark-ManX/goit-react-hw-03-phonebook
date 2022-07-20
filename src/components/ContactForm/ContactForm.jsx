@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import shortid from "shortid";
 import styles from './ContactForm.module.css';
 
 const { labelStyles } = styles;
