@@ -17,7 +17,7 @@ class ContactForm extends Component {
         const {name, value} = e.currentTarget;
 
         return (
-            this.setState({ id: shortid.generate(), [name]: value.trim(), })
+            this.setState({ [name]: value.trim(), })
         )
     }
 

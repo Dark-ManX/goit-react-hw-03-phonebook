@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import shortid from "shortid";
 import "./App.css";
 import ContactForm from "../components/ContactForm/ContactForm";
 import ContactList from "../components/ContactList/ContactList";
@@ -12,13 +13,13 @@ class App extends Component {
       {id: 'id-3', name: 'Eden Clements', number: '645-17-79'},
       {id: 'id-4', name: 'Annie Copeland', number: '227-91-26'},
     ],
+    id: null,
     filter: '',
   }
 
   componentDidMount() {
+    console.log(this.state.contacts);
     const parsedObj = JSON.parse(localStorage.getItem('contacts'));
-    console.log(parsedObj);
-    // const parsedContacts = parsedObj.contacts;
 
     if (parsedObj) {
      this.setState({contacts: parsedObj});
@@ -32,6 +33,7 @@ class App extends Component {
   }
 
   addContacts = text => {
+  
     const {contacts} = this.state;
     const contactsNames = contacts.find(
       el => (el.name.toLowerCase()===text.name.toLowerCase())
@@ -41,6 +43,8 @@ class App extends Component {
       return alert('This contact already exist');
     };
     
+    text.id = shortid.generate();
+
     this.setState(prevState => ({
       contacts: [...prevState.contacts, text]
     }));
