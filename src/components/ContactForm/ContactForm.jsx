@@ -6,7 +6,6 @@ const { labelStyles } = styles;
 class ContactForm extends Component {
 
     state = {
-        id: '',
         name: '',
         number: '',
     }
